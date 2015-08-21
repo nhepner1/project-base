@@ -1,0 +1,8 @@
+# Ignore any files added by editors or operating systems.
+.DS_Store
+.project
+.buildpath
+.settings
+.idea
+
+
