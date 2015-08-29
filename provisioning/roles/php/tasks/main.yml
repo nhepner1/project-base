@@ -1,0 +1,14 @@
+---
+
+- name: install PHP and associated packages
+  apt: name=php5 state=latest
+
+- name: install PHP GD library
+  apt: name=php5-gd state=latest
+  notify:
+    - restart apache
+
+- name: install PEAR
+  apt: name=php-pear state=present
+
+

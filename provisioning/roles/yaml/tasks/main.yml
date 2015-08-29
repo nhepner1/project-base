@@ -1,0 +1,20 @@
+---
+
+- name: install php5-dev package
+  apt: name=php5-dev state=latest
+
+- name: install libyaml for pecl yaml dependency
+  apt: name=libyaml-dev state=latest
+
+- name: install YAML
+  shell: echo "\n" | pecl install yaml
+
+- name: Create PECL yaml ini files
+  template: src=extension.ini.j2
+    dest=/etc/php5/mods-available/yaml.ini
+    owner=root
+    group=root
+    mode=0644
+
+- name: enable YAML
+  shell: php5enmod yaml
