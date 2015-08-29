@@ -7,6 +7,8 @@
     - db_user: drupal_user
     - db_password: drupaldbpass
 
+    - web_root: /docroot/
+
   roles:
     - update
     - apache
