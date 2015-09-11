@@ -3,6 +3,20 @@
 - name: install PHP and associated packages
   apt: name=php5 state=latest
 
+- name: install mbstring
+  apt: name=libapache2-mod-php5 state=latest
+
+- name: install mcrypt
+  apt: name=mcrypt state=latest
+
+- name: install php5-mcrypt
+  apt: name=php5-mcrypt state=latest
+
+- name: Enable php5 mcrypt
+  shell: php5enmod mcrypt
+  notify:
+    - restart apache
+
 - name: install PHP GD library
   apt: name=php5-gd state=latest
   notify:

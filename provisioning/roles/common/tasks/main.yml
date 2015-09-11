@@ -1,0 +1,7 @@
+---
+
+- name: install vim
+  apt: name=vim state=latest
+
+- name: install htop
+  apt: name=vim state=latest

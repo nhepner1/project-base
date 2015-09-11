@@ -1,0 +1,6 @@
+---
+
+pecl_extensions:
+  - xdebug
+  - yaml
+  - uploadprogress

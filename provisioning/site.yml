@@ -13,6 +13,6 @@
     - update
     - apache
     - php
-    - yaml
+    - pecl
     - mysql
 
