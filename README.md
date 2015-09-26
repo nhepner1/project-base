@@ -1,17 +1,15 @@
 Project Base
 ============
 
-Project base is a Vagrant/Ansible configuration and is set up 
-to provide a quick LAMP stack environment for development. This
-is to provide a rapid, generic development environment to 
-increase stability and reduce ramp-up time for projects.
+Project base is a Vagrant/Ansible configuration and is set up to provide a quick 
+LAMP stack environment for development. This is to provide a rapid, generic 
+development environment to increase stability and reduce ramp-up time for projects.
 
-Primarily, this has been used to instance quick drupal sites with a 
-full database and server stack, as well as a few PECL dependencies, 
-however, it can be used to work on any LAMP project. This automates 
-a lot of tasks, and while some of the downloads might take a little
-while, actual personal involvement before being able to develop is 
-about 5 minutes.
+Primarily, this has been used to instance quick drupal sites with a full database 
+and server stack, as well as a few PECL dependencies, however, it can be used to 
+work on any LAMP project. This automates a lot of tasks, and while some of the 
+downloads might take a little while, actual personal involvement before being able 
+to develop is about 5 minutes.
 
 Requirements
 ------------
@@ -74,6 +72,26 @@ Instance Vagrant
 ```
 vagrant up
 ```
+
+---------
+
+##### If Hostmanager is installed #####
+Use vagrant's hostmanager plugin to add the site name and IP address to the /etc/hosts file.
+```
+vagrant hostmanager
+```
+
+##### If Hostmanager not installed #####
+Add the IP and hostname to the /etc/hosts file manually
+```
+sudo echo '192.168.33.10 vagrant.dev' >> /etc/hosts
+```
+---------
+
+Navigate to 'http://vagrant.dev' in your browser of choice.
+
+Develop your site within the project/docroot folder using the tools of choice on your host 
+machine. Have fun!
 
 Credentials
 -----------
