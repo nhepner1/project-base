@@ -1,6 +1,8 @@
 ---
 
 pecl_extensions:
-  - xdebug
   - yaml
   - uploadprogress
+
+zend_pecl_extensions:
+  - xdebug

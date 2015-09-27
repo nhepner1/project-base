@@ -23,3 +23,22 @@
 - name: enable PECL extensions
   shell: php5enmod {{ item }}
   with_items: pecl_extensions
+
+- name: install zend extensions
+  shell: echo "\n" | pecl install {{ item }}
+  register: zend_result
+  changed_when: "'already installed' not in zend_result.stdout"
+  failed_when: "zend_result.stderr or ('ERROR' in zend_result.stdout)"
+  with_items: zend_pecl_extensions
+
+- name: create zend extension .ini files
+  template: src=zend_extension.ini.j2
+    dest=/etc/php5/mods-available/{{ item }}.ini
+    owner=root
+    group=root
+    mode=0644
+  with_items: zend_pecl_extensions
+
+- name: enable PECL extensions
+  shell: php5enmod {{ item }}
+  with_items: zend_pecl_extensions
