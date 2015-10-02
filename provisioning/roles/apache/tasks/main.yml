@@ -9,3 +9,6 @@
     owner=root
     group=root
     mode=0644
+
+- name: enable the mod_rewrite module
+  apache2_module: name=rewrite state=present
