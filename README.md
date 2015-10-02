@@ -23,7 +23,7 @@ OSX. It has not been tested on windows.
 #### Hostmanager (Optional)
 Install the vagrant hostmanager plugin
 ```
-vagrant install plugin vagrant-hostmanager
+vagrant plugin install vagrant-hostmanager
 ```
 
 Usage
