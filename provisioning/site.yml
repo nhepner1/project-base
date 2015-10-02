@@ -13,6 +13,8 @@
     - update
     - apache
     - php
+    - drush
     - pecl
     - mysql
+
 
