@@ -14,9 +14,9 @@ to develop is about 5 minutes.
 Requirements
 ------------
 This installation should work for all major flavors of linux, and 
-OSX. It has not been tested on windows.
+OSX. It has not been tested on windows, however should be supported.
 
- * Vagrant [Install](https://docs.vagrantup.com/v2/installation/index.html)
+ * Vagrant  >1.8.0 [Install](https://docs.vagrantup.com/v2/installation/index.html)
  * Virtualbox [Download and install](https://www.virtualbox.org/wiki/Downloads)
  * Ansible [Install](https://docs.ansible.com/ansible/intro_installation.html#installing-the-control-machine)
  
