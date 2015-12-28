@@ -1,0 +1,14 @@
+---
+
+- name: install codesniffer
+  command: /usr/bin/pear install PHP_CodeSniffer-1.5.6
+  args:
+    creates: /usr/share/php/PHP/CodeSniffer.php
+
+- name: install codesniffer in drush
+  command: /usr/bin/drush -y pm-download coder-7.x-2.x-dev --destination=/home/vagrant/.drush
+  args:
+    creates: /home/vagrant/.drush/coder
+
+- name: fix drush permissions
+  command: chown -R vagrant.vagrant /home/vagrant/.drush
