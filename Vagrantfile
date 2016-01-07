@@ -52,8 +52,9 @@ Vagrant.configure(2) do |config|
   #
   config.vm.provider "virtualbox" do |vb|
 
-     # Customize the amount of memory on the VM:
-     vb.memory = "1024"
+     # Leave the RAM as default, and allow the user to customize it via VirtualBox
+     # Specifying it here forces this value on guest boot
+     #vb.memory = "1024"
   end
 
   # Enable provisioning with a shell script. Additional provisioners such as

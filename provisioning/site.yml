@@ -13,8 +13,8 @@
     - update
     - apache
     - php
-    - drush
     - pecl
     - mysql
-
+    - drush
+    - drupal_coder
 
