@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 
 # Ansible local provisioning requires vagrant 1.8
-Vagrant.require_version ">= 1.8.0"
+Vagrant.require_version ">= 1.8.1"
 
 # All Vagrant configuration is done below. The "2" in Vagrant.configure
 # configures the configuration version (we support older styles for
@@ -64,6 +64,18 @@ Vagrant.configure(2) do |config|
   #   sudo apt-get update
   #   sudo apt-get install -y apache2
   # SHELL
+
+  # Temporary hack to ensure that ansible_local can load as provisioner
+  # https://github.com/mitchellh/vagrant/issues/6793
+  config.vm.provision :shell, inline: <<-SCRIPT
+    GALAXY=/usr/local/bin/ansible-galaxy
+    echo '#!/usr/bin/env bash
+    /usr/bin/ansible-galaxy "$@"
+    exit 0
+    ' | sudo tee $GALAXY
+    sudo chmod 0755 $GALAXY
+  SCRIPT
+
 
   config.vm.provision "ansible_local" do |ansible|
 
