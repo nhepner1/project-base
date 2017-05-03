@@ -101,6 +101,8 @@ MySQL Password: drupaldbpass
 
 Current Project Status
 ----------------------
+This project has evolved from my own personal needs as a lightweight alternative to [Drupal VM](https://www.drupalvm.com/). If you are considering this project, please throughly investigate Drupal VM first and make sure it doesn't already meet your needs. 
+
 While this project is under active development, it is **not** expected to hit a 1.0 release
 unless significant interest is demonstrated.
 
